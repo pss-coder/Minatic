@@ -16,6 +16,7 @@ struct Meeting: Identifiable, Codable {
     var theme: Theme
     var type: Type
     var history: [History] = []
+    var schedule: Date = Date.now
     
     init(id: UUID = UUID(), title: String, attendees: [String], lengthInMinutes: Int, theme: Theme, type: Type) {
         self.id = id
@@ -33,6 +34,8 @@ struct Meeting: Identifiable, Codable {
         lengthInMinutes = Int(data.lengthInMinutes)
         theme = data.theme
         type = data.type
+        schedule = data.schedule
+    
     }
     
      func getQuestions() -> [Question] {
@@ -48,14 +51,14 @@ struct Meeting: Identifiable, Codable {
     
     //    TO ALLOW BOTH CODABLE AND OBSERVABLE OBJECT FIX
         
-        enum CodingKeys: CodingKey {
-                case id
-                case title
-                case attendees
-                case theme
-                case type
-                case history
-            }
+//        enum CodingKeys: CodingKey {
+//                case id
+//                case title
+//                case attendees
+//                case theme
+//                case type
+//                case history
+//            }
 
 //            required init(from decoder: Decoder) throws {
 //                let values = try decoder.container(keyedBy: CodingKeys.self)
@@ -108,11 +111,12 @@ extension Meeting {
         
         var type: Type = .standup
         // all with default values -> no need create init(...)
+        var schedule: Date = .now
     }
 
     //compound data property
     var data: Data {
-        Data(title: title, attendees: attendees, lengthInMinutes: Double(lengthInMinutes), theme: theme, type: type)
+        Data(title: title, attendees: attendees, lengthInMinutes: Double(lengthInMinutes), theme: theme, type: type, schedule: schedule)
     }
     
     mutating func update(from data: Data) {
@@ -122,6 +126,7 @@ extension Meeting {
         theme = data.theme
         
         type = data.type
+        schedule = data.schedule
     }
     
 }

@@ -26,7 +26,7 @@ struct HomeView: View {
                 .listRowBackground(meeting.theme.mainColor)
                 
             }
-        }
+        } // end of List
         .navigationTitle("Meetings")
         .toolbar {
             Button(action: {
@@ -35,7 +35,7 @@ struct HomeView: View {
                 Image(systemName: "plus")
             }
             .accessibilityLabel("New Scrum")
-        }
+        } // end of .toolbar
         .sheet(isPresented: $isPresentingNewMeetingView) {
             NavigationView {
                 DetailEditView(data: $newMeetingData)
@@ -53,10 +53,9 @@ struct HomeView: View {
                                 isPresentingNewMeetingView = false
                                 newMeetingData = Meeting.Data()
                             }
-                        }
-                        
+                        } // end of ToolBarItem
                     }
-            }
+            } // end of NavigationView{}
         } // end of NewMeetingView Sheet
         .onChange(of: scenePhase) { phase in
             if phase == .inactive { saveAction() }

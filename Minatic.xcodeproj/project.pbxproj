@@ -86,6 +86,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4718381328A2AD1A002638C2 /* Home Views */ = {
+			isa = PBXGroup;
+			children = (
+				47D4E7B5289BC53D00922FDF /* HomeView.swift */,
+				47D4E7E0289C052A00922FDF /* CardView.swift */,
+			);
+			path = "Home Views";
+			sourceTree = "<group>";
+		};
 		47D4E7A7289BC53D00922FDF = {
 			isa = PBXGroup;
 			children = (
@@ -106,10 +115,9 @@
 			isa = PBXGroup;
 			children = (
 				47D4E7B3289BC53D00922FDF /* MinaticApp.swift */,
-				47D4E7B5289BC53D00922FDF /* HomeView.swift */,
-				47D4E7E0289C052A00922FDF /* CardView.swift */,
-				47D4E7E7289C0FB200922FDF /* Meeting Views */,
+				4718381328A2AD1A002638C2 /* Home Views */,
 				47D4E7DF289BFB7A00922FDF /* Meeting Detail */,
+				47D4E7E7289C0FB200922FDF /* Meeting Views */,
 				47D4E7C1289BC55800922FDF /* Models */,
 				47D4E7DC289BD2B300922FDF /* Database */,
 				47D4E7C6289BC5F800922FDF /* Utility */,

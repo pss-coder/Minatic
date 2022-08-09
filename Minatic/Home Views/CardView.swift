@@ -20,9 +20,10 @@ struct CardView: View {
                 Label("\(meeting.attendees.count)", systemImage: "person.3")
                     .accessibilityLabel("\(meeting.attendees.count) attendees")
                 Spacer()
-                Label("\(meeting.lengthInMinutes)", systemImage: "clock")
-                    .accessibilityLabel("\(meeting.lengthInMinutes) minute meeting")
-                    .labelStyle(.trailingIcon) // LabelStyle.Swift
+//                Label("\(meeting.lengthInMinutes)", systemImage: "clock")
+//                    .accessibilityLabel("\(meeting.lengthInMinutes) minute meeting")
+//                    .labelStyle(.trailingIcon) // LabelStyle.Swift
+                Label("\(meeting.schedule.formatted(date: .abbreviated, time: .shortened))", systemImage: "clock")
             }
             .font(.caption)
         }
