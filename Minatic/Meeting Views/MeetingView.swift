@@ -19,6 +19,8 @@ struct MeetingView: View {
     @StateObject var speechRecognizer = SpeechRecognizer()
     @State private var isRecording = false // to display recording indicator
     
+    @Environment(\.presentationMode) private var presentationMode
+    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 16)
@@ -30,14 +32,16 @@ struct MeetingView: View {
                 //Placeholder for circular timer view
                 MeetingTimerView(speakers: meetingTimer.speakers, theme: meeting.theme, isRecording: isRecording)
                 
+                
+                
                 ForEach($meetingTimer.questions) { question in
                     MeetingQuestionView(question: question) {
                         print(meetingTimer.isAllQuestionAnswered)
                         // logic here -> if is true -> set speaker isCompleted
                         // reset -> ticks
                         if meetingTimer.isAllQuestionAnswered {
-                            // auto skip speaker
-                            meetingTimer.skipSpeaker()
+                            // DO NOT auto skip speaker
+
                         }
                     }
                 }
@@ -48,7 +52,9 @@ struct MeetingView: View {
                 
                 
                 //Footer
-                MeetingFooterView(speakers: meetingTimer.speakers, skipAction: meetingTimer.skipSpeaker)
+                MeetingFooterView(speakers: meetingTimer.speakers, skipAction: meetingTimer.skipSpeaker) {
+                    presentationMode.wrappedValue.dismiss()
+                }
                 
             } // end of VStack
             
@@ -79,7 +85,7 @@ struct MeetingView: View {
             speechRecognizer.stopTranscribing();
             isRecording = false
             
-            let newHistory = History(attendees: meeting.attendees, lengthInMinutes: meeting.timer.secondsElapsed / 60, transcript: speechRecognizer.transcript)
+            let newHistory = History(speakers: meetingTimer.speakers, lengthInMinutes: meeting.timer.secondsElapsed / 60, transcript: speechRecognizer.transcript)
             meeting.history.insert(newHistory, at: 0)
         })
         .navigationBarTitleDisplayMode(.inline)

@@ -7,15 +7,15 @@ import Foundation
 /// Keeps time for a daily scrum meeting. Keep track of the total meeting time, the time for each speaker, and the name of the current speaker.
 class MeetingTimer: ObservableObject {
     /// A struct to keep track of meeting attendees during a meeting.
-    struct Speaker: Identifiable {
+    struct Speaker: Identifiable, Codable {
         /// The attendee name.
         let name: String
         /// True if the attendee has completed their turn to speak.
         var isCompleted: Bool
         /// Id for Identifiable conformance.
-        let id = UUID()
+        var id = UUID()
         
-        let questions: [Question] = []
+        var questions: [Question] = []
     }
     
     /// The name of the meeting attendee who is speaking.
@@ -89,6 +89,10 @@ class MeetingTimer: ObservableObject {
     
     /// Advance the timer to the next speaker.
     func skipSpeaker() {
+        // Update speaker response to respective questions
+        speakers[speakerIndex].questions = questions
+        
+        
         changeToSpeaker(at: speakerIndex + 1)
         
         //NEWLY ADDED FOR QUESTIONS

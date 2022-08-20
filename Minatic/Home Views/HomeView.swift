@@ -34,7 +34,7 @@ struct HomeView: View {
             }) {
                 Image(systemName: "plus")
             }
-            .accessibilityLabel("New Scrum")
+            .accessibilityLabel("New Meeting")
         } // end of .toolbar
         .sheet(isPresented: $isPresentingNewMeetingView) {
             NavigationView {

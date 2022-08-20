@@ -24,7 +24,13 @@ struct Meeting: Identifiable, Codable {
         self.lengthInMinutes = lengthInMinutes
         self.theme = theme
         self.type = type
-        self.attendees = attendees.map { Attendee(name: $0) }
+        self.attendees = attendees.map({ name in
+            var attendee = Attendee(name: name)
+            attendee.questions = self.getQuestions()
+            return attendee
+        })
+        
+        
     }
     
     init(data: Data) {
@@ -89,7 +95,7 @@ extension Meeting {
         var id: UUID
         var name: String
         //var image: String
-//        var questions: [Question]
+        var questions: [Question] = []
 //        var isAllQuestionsAnswered: Bool {
 //            self.questions.allSatisfy { $0.isAnswered == true }
 //        }

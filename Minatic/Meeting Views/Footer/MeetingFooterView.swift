@@ -13,6 +13,9 @@ struct MeetingFooterView: View {
     //to skip speaker
     var skipAction: () -> Void
     
+    // to finishMeeting: () -> void
+    var finishMeeting: () -> Void
+    
     private var speakerNumber: Int? {
             guard let index = speakers.firstIndex(where: { !$0.isCompleted }) else { return nil}
             return index + 1
@@ -33,6 +36,11 @@ struct MeetingFooterView: View {
             HStack {
                 if isLastSpeaker {
                     Text("Last Speaker")
+                    //TODO: ADD button to finish meeting
+                    Button(action: finishMeeting) {
+                        Text("Finish Meeting")
+                    }
+                    
                 } else {
                     Text(speakerText)
                     Spacer()
@@ -49,7 +57,7 @@ struct MeetingFooterView: View {
 
 struct MeetingFooterView_Previews: PreviewProvider {
     static var previews: some View {
-        MeetingFooterView(speakers: Meeting.sampleData[0].attendees.speakers, skipAction: {})
+        MeetingFooterView(speakers: Meeting.sampleData[0].attendees.speakers, skipAction: {}, finishMeeting: {})
             .previewLayout(.sizeThatFits)
     }
 }

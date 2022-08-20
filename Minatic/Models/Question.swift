@@ -18,6 +18,13 @@ class Question: Identifiable, Codable, ObservableObject {
         self.question = question
     }
     
+    init(id: UUID = UUID(), _ question: String, isAnswered:Bool, response: String) {
+        self.id = id
+        self.question = question
+        self.isAnswered = isAnswered
+        self.response = response
+    }
+    
     
     enum CodingKeys: CodingKey {
             case id

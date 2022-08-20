@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		470DA35B28A594D800DE1E70 /* HistoryResponseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470DA35A28A594D800DE1E70 /* HistoryResponseView.swift */; };
 		47D4E7B4289BC53D00922FDF /* MinaticApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D4E7B3289BC53D00922FDF /* MinaticApp.swift */; };
 		47D4E7B6289BC53D00922FDF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D4E7B5289BC53D00922FDF /* HomeView.swift */; };
 		47D4E7B8289BC53F00922FDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47D4E7B7289BC53F00922FDF /* Assets.xcassets */; };
@@ -41,6 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		470DA35A28A594D800DE1E70 /* HistoryResponseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryResponseView.swift; sourceTree = "<group>"; };
+		47A9505728AEBF03000E3177 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		47D4E7B0289BC53D00922FDF /* Minatic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Minatic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47D4E7B3289BC53D00922FDF /* MinaticApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinaticApp.swift; sourceTree = "<group>"; };
 		47D4E7B5289BC53D00922FDF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -86,6 +89,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		470DA35C28A594E100DE1E70 /* History Views */ = {
+			isa = PBXGroup;
+			children = (
+				470DA35A28A594D800DE1E70 /* HistoryResponseView.swift */,
+				47D4E7E5289C0D8600922FDF /* HistoryView.swift */,
+			);
+			path = "History Views";
+			sourceTree = "<group>";
+		};
 		4718381328A2AD1A002638C2 /* Home Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +126,7 @@
 		47D4E7B2289BC53D00922FDF /* Minatic */ = {
 			isa = PBXGroup;
 			children = (
+				47A9505728AEBF03000E3177 /* Info.plist */,
 				47D4E7B3289BC53D00922FDF /* MinaticApp.swift */,
 				4718381328A2AD1A002638C2 /* Home Views */,
 				47D4E7DF289BFB7A00922FDF /* Meeting Detail */,
@@ -180,7 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				47D4E7DD289BFB6E00922FDF /* DetailView.swift */,
-				47D4E7E5289C0D8600922FDF /* HistoryView.swift */,
+				470DA35C28A594E100DE1E70 /* History Views */,
 				47D4E7FF289DB63C00922FDF /* DetailEditView.swift */,
 				47D4E801289DB7B000922FDF /* ThemeView.swift */,
 				47D4E803289DB7C800922FDF /* ThemePicker.swift */,
@@ -332,6 +345,7 @@
 				47D4E7F6289C12DD00922FDF /* MeetingFooterView.swift in Sources */,
 				47D4E7E6289C0D8600922FDF /* HistoryView.swift in Sources */,
 				47D4E806289DB9B200922FDF /* QuestionView.swift in Sources */,
+				470DA35B28A594D800DE1E70 /* HistoryResponseView.swift in Sources */,
 				47D4E7F1289C112400922FDF /* MeetingProgressViewStyle.swift in Sources */,
 				47D4E7F8289C139C00922FDF /* SpeakerArc.swift in Sources */,
 				47D4E7CE289BC64200922FDF /* ErrorView.swift in Sources */,
@@ -466,11 +480,11 @@
 				DEVELOPMENT_TEAM = MZ483TW92Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Minatic/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to transcribe the meeting. Audio recordings are discarded after transcription.";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You can view a text transcription of your meeting in the app.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
@@ -498,11 +512,11 @@
 				DEVELOPMENT_TEAM = MZ483TW92Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Minatic/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to transcribe the meeting. Audio recordings are discarded after transcription.";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You can view a text transcription of your meeting in the app.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;

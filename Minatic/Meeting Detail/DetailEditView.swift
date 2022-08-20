@@ -29,6 +29,8 @@ struct DetailEditView: View {
                         .accessibilityHidden(true)
                 }
                 
+                DatePicker("Schedule", selection: $data.schedule, in: Date.now...)
+                
                 ThemePicker(selection: $data.theme)
                 
             } // end of Meeting Info Section

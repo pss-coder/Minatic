@@ -10,14 +10,14 @@ import Foundation
 struct History: Identifiable, Codable {
     let id: UUID
     let date: Date
-    var attendees: [Meeting.Attendee]
+    var speakers: [MeetingTimer.Speaker]
     var lengthInMinutes: Int
     var transcript: String?
     
-    init(id: UUID = UUID(), date: Date = Date(), attendees: [Meeting.Attendee], lengthInMinutes: Int = 5, transcript: String? = nil) {
+    init(id: UUID = UUID(), date: Date = Date(), speakers: [MeetingTimer.Speaker], lengthInMinutes: Int = 5, transcript: String? = nil) {
         self.id = id
         self.date = date
-        self.attendees = attendees
+        self.speakers = speakers
         self.lengthInMinutes = lengthInMinutes
         self.transcript = transcript
         
