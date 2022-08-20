@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		470DA35B28A594D800DE1E70 /* HistoryResponseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470DA35A28A594D800DE1E70 /* HistoryResponseView.swift */; };
+		4784D0D828B13A5000B171BA /* EmailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4784D0D728B13A4F00B171BA /* EmailService.swift */; };
 		47D4E7B4289BC53D00922FDF /* MinaticApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D4E7B3289BC53D00922FDF /* MinaticApp.swift */; };
 		47D4E7B6289BC53D00922FDF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D4E7B5289BC53D00922FDF /* HomeView.swift */; };
 		47D4E7B8289BC53F00922FDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47D4E7B7289BC53F00922FDF /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		470DA35A28A594D800DE1E70 /* HistoryResponseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryResponseView.swift; sourceTree = "<group>"; };
+		4784D0D728B13A4F00B171BA /* EmailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailService.swift; sourceTree = "<group>"; };
 		47A9505728AEBF03000E3177 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		47D4E7B0289BC53D00922FDF /* Minatic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Minatic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47D4E7B3289BC53D00922FDF /* MinaticApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinaticApp.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				47D4E7C8289BC64200922FDF /* AVPlayer + Ding.swift */,
 				47D4E7C9289BC64200922FDF /* ErrorWrapper.swift */,
 				47D4E7C7289BC64200922FDF /* SpeechRecognizer.swift */,
+				4784D0D728B13A4F00B171BA /* EmailService.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				47D4E7D3289BC69800922FDF /* MeetingTimer.swift in Sources */,
 				47D4E7FC289C140000922FDF /* MeetingTimerView.swift in Sources */,
 				47D4E802289DB7B000922FDF /* ThemeView.swift in Sources */,
+				4784D0D828B13A5000B171BA /* EmailService.swift in Sources */,
 				47D4E7E4289C059900922FDF /* LabelStyle.swift in Sources */,
 				47D4E800289DB63C00922FDF /* DetailEditView.swift in Sources */,
 				47D4E7D9289BCB1E00922FDF /* Question.swift in Sources */,

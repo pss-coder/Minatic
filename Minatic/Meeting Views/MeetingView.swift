@@ -30,7 +30,7 @@ struct MeetingView: View {
                 MeetingHeaderView(secondsElapsed: meetingTimer.secondsElapsed, secondsRemaining: meetingTimer.secondsRemaining, theme: meeting.theme)
                 
                 //Placeholder for circular timer view
-                MeetingTimerView(speakers: meetingTimer.speakers, theme: meeting.theme, isRecording: isRecording)
+                MeetingTimerView(speakers: meetingTimer.speakers, theme: meeting.theme, isRecording: isRecording, transcription: speechRecognizer.transcript)
                 
                 
                 

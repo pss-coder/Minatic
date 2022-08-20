@@ -9,6 +9,10 @@ import SwiftUI
 
 struct HistoryView: View {
     let history: History
+    
+    @State private var isPresentingEmailFieldView = false // for model sheet view
+    
+    @State var email: String
 
     var body: some View {
 //        ScrollView {
@@ -34,10 +38,11 @@ struct HistoryView: View {
         
                     } // end of Meeting Type Section
                     
-                    
+                    //TODO: FOR PERSON HAS THEIR OWN TRANSCRIPTION
+                    // logic: everytime - question is checked, take transcription and save to corresponding question
                     Section(header: Text("Attendees")) {
                         ForEach(history.speakers) { speaker in
-                            NavigationLink(destination: HistoryResponseView(attendeeName: speaker.name, questions: speaker.questions)) {
+                            NavigationLink(destination: HistoryResponseView(attendeeName: speaker.name, questions: speaker.questions, fullTranscription: history.transcript ?? "no transcription done")) {
                                 Text(speaker.name)
                             }
                             
@@ -48,7 +53,7 @@ struct HistoryView: View {
                 } // end of List
                 
                 Button {
-                    
+                    isPresentingEmailFieldView = true
                 } label: {
                     Text("Send Email")
                         .font(.callout)
@@ -56,8 +61,25 @@ struct HistoryView: View {
                         .background(Color.blue)
                         .foregroundColor(.white)
                         .cornerRadius(10)
-                    
+                }
+                .sheet(isPresented: $isPresentingEmailFieldView) {
+                    VStack {
+                        TextField("Enter email to send", text: $email)
+                            .textFieldStyle(.roundedBorder)
+                            .padding()
                         
+                        Button {
+                            
+                            Task {
+                                    _ = await EmailService.sendEmail(email: email, completion: { data in
+                                        Alert(title: Text("Email Sent"))
+                                    })
+                            }
+                            
+                        } label: {
+                            Text("Confirm Send")
+                        }
+                    }
                 }
                 
                 
@@ -95,6 +117,6 @@ struct HistoryView_Previews: PreviewProvider {
     }
     
     static var previews: some View {
-        HistoryView(history: history)
+        HistoryView(history: history, email: "pawandeepse@me.com")
     }
 }

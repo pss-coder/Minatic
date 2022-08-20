@@ -14,6 +14,8 @@ struct MeetingTimerView: View {
     
     let isRecording: Bool
     
+    var transcription: String
+    
     private var currentSpeaker: String {
 //        current speaker is the first person on the list who hasn’t spoken. If there isn’t
 //        a current speaker, the expression returns “Someone.”
@@ -37,6 +39,8 @@ struct MeetingTimerView: View {
                         .font(.title)
                         .padding(.top)
                         .accessibilityLabel(isRecording ? "with transcription" : "without transcription" )
+                    
+                    Text("\(transcription)")
                 }
                 .accessibilityElement(children: .combine)
                 .foregroundStyle(theme.accentColor)
@@ -63,6 +67,6 @@ struct MeetingTimerView_Previews: PreviewProvider {
     
     
     static var previews: some View {
-        MeetingTimerView(speakers: speakers, theme: .yellow, isRecording: true)
+        MeetingTimerView(speakers: speakers, theme: .yellow, isRecording: true, transcription: "transcription here")
     }
 }
